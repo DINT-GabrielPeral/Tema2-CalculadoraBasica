@@ -23,17 +23,60 @@ namespace Tema2_CalculadoraBasica
         public MainWindow()
         {
             InitializeComponent();
+            calcularButton.IsEnabled = false;
         }
 
         private void calcularButton_Click(object sender, RoutedEventArgs e)
         {
             if (operadorTextBox.Text == "+")
             {
-                double digito1 = int.Parse(digito1TextBox.ToString());
-                double  digito2 = int.Parse(digito2TextBox.ToString());
-                double suma = 
-                respuestaTextBlock.Text = ().ToString();
+                double digito1 = int.Parse(digito1TextBox.Text);
+                double digito2 = int.Parse(digito2TextBox.Text);
+                double suma = digito1 + digito2;
+                respuestaTextBlock.Text = suma.ToString();
             }
+
+            if (operadorTextBox.Text == "-")
+            {
+                double digito1 = int.Parse(digito1TextBox.Text);
+                double digito2 = int.Parse(digito2TextBox.Text);
+                double resta = digito1 - digito2;
+                respuestaTextBlock.Text = resta.ToString();
+            }
+
+            if (operadorTextBox.Text == "*")
+            {
+                double digito1 = int.Parse(digito1TextBox.Text);
+                double digito2 = int.Parse(digito2TextBox.Text);
+                double multiplicacion = digito1 * digito2;
+                respuestaTextBlock.Text = multiplicacion.ToString();
+            }
+
+            if (operadorTextBox.Text == "/")
+            {
+                double digito1 = int.Parse(digito1TextBox.Text);
+                double digito2 = int.Parse(digito2TextBox.Text);
+                double division = digito1 / digito2;
+                respuestaTextBlock.Text = division.ToString();
+            }
+        }
+
+        private void operadorTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (operadorTextBox.Text == "+" || operadorTextBox.Text == "-" || operadorTextBox.Text == "*" || operadorTextBox.Text == "/")
+            {
+                calcularButton.IsEnabled = true;
+            }
+            else
+                calcularButton.IsEnabled = false;
+        }
+
+        private void limpiarButton_Click(object sender, RoutedEventArgs e)
+        {
+            digito1TextBox.Text = "";
+            digito2TextBox.Text = "";
+            operadorTextBox.Text = "";
+            respuestaTextBlock.Text = "";
         }
     }
 }

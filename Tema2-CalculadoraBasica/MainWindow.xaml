@@ -9,9 +9,9 @@
     <Grid>
         <TextBox x:Name="digito1TextBox" HorizontalAlignment="Left" Height="23" Margin="113,74,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="digito2TextBox" HorizontalAlignment="Left" Height="23" Margin="113,175,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="operadorTextBox" HorizontalAlignment="Left" Height="23" Margin="113,286,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="operadorTextBox" HorizontalAlignment="Left" Height="23" Margin="113,286,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="operadorTextBox_TextChanged"/>
         <Button x:Name="calcularButton" IsDefault="True" Content="Calcular" HorizontalAlignment="Left" Margin="364,337,0,0" VerticalAlignment="Top" Width="75" Click="calcularButton_Click"/>
-        <Button x:Name="limpiarButton" IsCancel="True" Content="Limpiar" HorizontalAlignment="Left" Margin="577,337,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="limpiarButton" IsCancel="True" Content="Limpiar" HorizontalAlignment="Left" Margin="577,337,0,0" VerticalAlignment="Top" Width="75" Click="limpiarButton_Click"/>
         <TextBlock x:Name="respuestaTextBlock" HorizontalAlignment="Left" Margin="286,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="197" Width="383" FontSize="20"/>
 
     </Grid>
